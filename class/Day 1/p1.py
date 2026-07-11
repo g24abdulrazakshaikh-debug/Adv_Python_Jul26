@@ -1,18 +1,15 @@
-# Basic Python Classes and Objects
-# Class is a Blueprint using which we shall create objects
-class Dog:
-    #constructor
-    def __init__(self,name,age):
-        self.name = name
-        self.age = age
+# Impure function: has sideeffects modifies external state
+counter = 0
+def impure_increment():
+    global counter
+    counter += 1
+    return counter
 
-    # Method - function that belongs to the class
-    def bark(self):
-        return f"{self.name} says woof! and it is {self.age} years old"
+# print(impure_increment())
+# print(impure_increment())
 
-# Create object
-my_dog = Dog("Jerry",3)
-my_dog2 = Dog("Perry",4)
+def pure_increment(x):
+    return x+1
 
-print(my_dog.bark())
-print(my_dog2.bark())
+print(pure_increment(5))
+print(pure_increment(5))
